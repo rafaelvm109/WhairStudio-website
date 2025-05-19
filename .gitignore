@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.env/
+
+# IDEs
+.vscode/
+.idea/
+
+# Flask/SQLAlchemy stuff
+instance/
+*.sqlite3
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
