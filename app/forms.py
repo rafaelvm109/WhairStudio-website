@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, DecimalField
+from wtforms.validators import DataRequired, Length, EqualTo, ValidationError, NumberRange
 from .models.user import User
 from wtforms import BooleanField
+from flask_wtf.file import FileField, FileAllowed
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', 
@@ -32,3 +33,36 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     
     submit = SubmitField('Login')
+
+
+class ProductForm(FlaskForm):
+    """
+    Form for an admin to add or edit a product.
+    This class defines the structure and validation rules for our product form.
+    """
+    # StringField for the product's name.
+    # DataRequired means this field cannot be empty.
+    # Length sets a min and max character count.
+    name = StringField('Product Name', 
+                       validators=[DataRequired(), Length(min=2, max=100)])
+    
+    # DecimalField is ideal for prices to avoid floating-point math errors.
+    # We set places=2 for cents and rounding=None to be explicit.
+    # NumberRange ensures the price is a positive number.
+    price = DecimalField('Price ($)', 
+                         places=2, 
+                         rounding=None,
+                         validators=[DataRequired(), NumberRange(min=0)])
+    
+    # TextAreaField provides a larger, multi-line text box for the description.
+    description = TextAreaField('Description', 
+                                validators=[DataRequired()])
+    
+    # FileField will render as an <input type="file"> in HTML.
+    # The 'FileAllowed' validator is crucial for security. It ensures
+    # that only files with the specified extensions can be submitted.
+    image = FileField('Update Product Image', 
+                      validators=[FileAllowed(['jpg', 'jpeg', 'png'])])
+    
+    # The submit button for the form.
+    submit = SubmitField('Save Product')
