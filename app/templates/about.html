@@ -1,5 +1,13 @@
-{% extends "base.html" %}
-{% block title %}Page Title{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}
+About Us - Haircut Saloon
+{% endblock %}
+
 {% block content %}
-<h2>About</h2>
+  <img src="{{ url_for('static', filename='images/logo.png') }}" class="img-fluid rounded d-block mx-auto mb-4" style="max-width: 350px;" alt="Haircut Saloon Logo">
+  <h1>About Our Saloon</h1>
+  <p class="lead">Founded in 2010, our saloon has been the go-to destination for premium hair care in the community.</p>
+  <p>Our mission is to provide an unparalleled styling experience, combining artistic vision with a deep commitment to our clients' satisfaction. We believe that a great haircut can not only change your look but also boost your confidence. Our team of expert stylists stays ahead of the latest trends and techniques to offer you a wide range of services, from classic cuts to modern color treatments.</p>
+  <p>We are dedicated to creating a welcoming and relaxing atmosphere where you can feel comfortable and pampered. Thank you for trusting us with your style.</p>
 {% endblock %}
