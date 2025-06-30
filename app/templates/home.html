@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Home - Haircut Saloon
+Início - Whair Studio
 {% endblock %}
 
 {% block content %}
 
 <div class="container text-center my-5">
     
-    <h1 class="display-4 mb-4">Welcome to Haircut Saloon</h1>
+    <h1 class="display-4 mb-4">Bem-vindo ao Whair Studio</h1>
 
     <div class="image-window-container">
         <div class="image-window side-window" id="left-window">
@@ -22,16 +22,14 @@ Home - Haircut Saloon
         </div>
     </div>
     <p class="lead my-4">
-        Your style, our passion. Experience the best haircut and styling services in town.
+        Seu estilo, nossa paixão. Experimente os melhores serviços de corte de cabelo e estilo da cidade.
     </p>
 
     <div>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Book Now</a>
-        <a class="btn btn-secondary btn-lg" href="{{ url_for('main.products') }}" role="button">Our Products</a>
+        <a class="btn btn-secondary btn-lg" href="{{ url_for('main.products') }}" role="button">Nossos Produtos</a>
     </div>
 
     <script>
-        // Define the image URLs here where Jinja2 can process them
         const images = [
             "{{ url_for('static', filename='images/carrousel1.png') }}",
             "{{ url_for('static', filename='images/carrousel2.png') }}",
@@ -43,18 +41,18 @@ Home - Haircut Saloon
 <div class="row text-center mt-5">
     <div class="col-md-4">
         <img src="{{ url_for('static', filename='images/stylisy.png') }}" class="img-fluid rounded mb-3" style="width: 180px; height: 180px; object-fit: cover;" alt="Expert Stylists">
-        <h2>Expert Stylists</h2>
-        <p>Our stylists are trained professionals dedicated to bringing your vision to life with precision and care.</p>
+        <h2>Estilistas especialistas</h2>
+        <p>Nossos estilistas são profissionais treinados e dedicados a dar vida à sua visão com precisão e cuidado.</p>
     </div>
     <div class="col-md-4">
         <img src="{{ url_for('static', filename='images/products.png') }}" class="img-fluid rounded mb-3" style="width: 180px; height: 180px; object-fit: cover;" alt="Quality Products">
-        <h2>Quality Products</h2>
-        <p>We use and sell only the highest quality products to ensure your hair stays healthy and vibrant.</p>
+        <h2>Produtos de alta qualidade</h2>
+        <p>Usamos e vendemos apenas produtos da mais alta qualidade para garantir que seu cabelo permaneça saudável e vibrante.</p>
     </div>
     <div class="col-md-4">
         <img src="{{ url_for('static', filename='images/relaxing.png') }}" class="img-fluid rounded mb-3" style="width: 180px; height: 180px; object-fit: cover;" alt="Relaxing Atmosphere">
-        <h2>Relaxing Atmosphere</h2>
-        <p>Sit back and relax in our modern and comfortable saloon. We are committed to providing a top-tier experience.</p>
+        <h2>Atmosfera relaxante</h2>
+        <p>Relaxe em nosso salão moderno e confortável. Nosso compromisso é proporcionar uma experiência de alto nível.</p>
     </div>
 </div>
 

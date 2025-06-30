@@ -15,12 +15,12 @@ def login():
         if user and check_password_hash(user.password, form.password.data):
             # User exists and password is correct
             login_user(user, remember=form.remember.data)
-            flash('Login successful!', 'success')
+            flash('Login bem-sucedido!', 'success')
             next_page = request.args.get('next')
             return redirect(next_page) if next_page else redirect(url_for('main.home'))
         else:
             # User does not exist or password was incorrect
-            flash('Login Unsuccessful. Please check username and password.', 'danger')
+            flash('Login sem sucesso. Verifique o nome de usuário e a senha.', 'danger')
     return render_template('login.html', title='Login', form=form)
 
 @auth.route('/register', methods=['GET', 'POST'])
@@ -32,7 +32,7 @@ def register():
         new_user = User(username=form.username.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
-        flash('Your account has been created! You are now able to log in.', 'success')
+        flash('Sua conta foi criada! Agora você pode fazer login.', 'success')
         return redirect(url_for('auth.login'))
     
     # This part runs for a GET request or if the form validation fails

@@ -46,3 +46,28 @@
     filter: blur(0);
     z-index: 10; /* Ensure center is on top */
 }
+
+/*
+=====================================================
+    Sticky Footer Styles
+=====================================================
+*/
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  /* This makes the main content area grow to fill any available space */
+  flex: 1 0 auto;
+}
+
+footer {
+  /* This ensures the footer doesn't shrink */
+  flex-shrink: 0;
+}

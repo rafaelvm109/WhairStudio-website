@@ -103,7 +103,7 @@ def add_product():
 
         db.session.add(new_product)
         db.session.commit()
-        flash('Product has been added successfully!', 'success')
+        flash('Produto adicionado com sucesso!', 'success')
 
         return redirect(url_for('admin.dashboard'))
 
@@ -136,7 +136,7 @@ def update_product(product_id):
         
         # We only need to commit the changes, as the product is already in the session
         db.session.commit()
-        flash('Your product has been updated!', 'success')
+        flash('Seu produto foi atualizado!', 'success')
         return redirect(url_for('admin.dashboard'))
 
     # This block runs when the admin first visits the page (GET request)
@@ -174,5 +174,5 @@ def delete_product(product_id):
     # Commit the changes to permanently delete the record
     db.session.commit()
     
-    flash('Product has been deleted.', 'success')
+    flash('O produto foi excluído.', 'success')
     return redirect(url_for('admin.dashboard'))

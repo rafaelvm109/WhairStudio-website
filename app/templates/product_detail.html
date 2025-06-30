@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='product_pics/' + product.image_file) }}" alt="{{ product.name }}" class="img-fluid rounded">
+        </div>
+
+        <div class="col-md-6">
+            <h1 class="display-4">{{ product.name }}</h1>
+
+            <h3 class="text-muted mb-3">${{ "%.2f"|format(product.price) }}</h3>
+
+            <p class="lead">{{ product.description }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

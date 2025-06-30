@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-Register - Haircut Saloon
+Registre-se - Whair Studio
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@ Register - Haircut Saloon
         <div class="content-section">
             <form method="POST" action="">
                 {{ form.hidden_tag() }} <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Join Today</legend>
+                    <legend class="border-bottom mb-4">Criar Conta</legend>
 
                     {% with messages = get_flashed_messages(with_categories=true) %}
                         {% if messages %}
@@ -70,7 +70,7 @@ Register - Haircut Saloon
         </div>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="{{ url_for('auth.login') }}">Sign In</a>
+                Já tem uma conta? <a class="ml-2" href="{{ url_for('auth.login') }}">Faça login</a>
             </small>
         </div>
     </div>
