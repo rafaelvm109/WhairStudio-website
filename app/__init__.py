@@ -10,6 +10,15 @@ import datetime
 load_dotenv()
 
 def create_app():
+    """
+    Initializes a Flask web application.
+    
+    This function sets up and configures the application, including
+    database and login manager initialization, as well as registering
+    the main, auth, and admin blueprints.
+    
+    @return A configured Flask web application.
+    """
     app = Flask(__name__)
     app.config.from_object('config.Config')
 
@@ -26,6 +35,13 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(user_id):
+        """
+        Loads a user by their user ID.
+
+        @param user_id The ID of the user to load.
+        @return The user instance with the given user ID, or None if the user
+                does not exist.
+        """
         return User.query.get(int(user_id))
 
     app.register_blueprint(main)

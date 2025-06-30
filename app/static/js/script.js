@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    // Definitive script for sliding carousel with rotating focus.
-
     // The 'images' array from home.html is used here.
     if (typeof images === 'undefined') { return; }
 

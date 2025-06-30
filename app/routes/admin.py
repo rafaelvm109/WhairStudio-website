@@ -1,16 +1,11 @@
-# Import necessary tools from Flask and other packages
 import os
 import secrets
-# Import the Pillow library for image processing
 from PIL import Image
-# Import necessary tools from Flask
 from flask import Blueprint, render_template, redirect, url_for, flash, current_app, session, request, abort
 from flask_login import current_user, login_required
-# Import our database and models/forms
 from ..extensions import db
 from ..forms import ProductForm
 from ..models.product import Product
-
 
 # Create the admin blueprint
 admin = Blueprint('admin', __name__)
